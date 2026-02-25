@@ -1,7 +1,10 @@
 FROM node:18-alpine as build
 WORKDIR /usr/src/app
 COPY package*.json ./
+
 RUN npm install
+RUN npm install @angular/animations
+
 COPY . .
 RUN npm run build -- --configuration production
 
