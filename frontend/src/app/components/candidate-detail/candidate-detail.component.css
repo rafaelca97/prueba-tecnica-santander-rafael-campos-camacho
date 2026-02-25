@@ -133,7 +133,6 @@
   justify-content: flex-start;
 }
 
-/* Botón estilo "submit-button" (igual que el form) */
 .back-btn {
   width: 15%;
   padding: 1rem 0;
@@ -142,18 +141,15 @@
   border-radius: 4px;
 }
 
-/* Estado normal */
 :host ::ng-deep .back-btn.mat-mdc-unelevated-button {
   background-color: rgba(63, 81, 181, 1) !important;
   color: #fff !important;
 }
 
-/* Hover */
 :host ::ng-deep .back-btn.mat-mdc-unelevated-button:hover {
   background-color: rgba(63, 81, 181, 0.9) !important;
 }
 
-/* Si algún día lo deshabilitas */
 :host ::ng-deep .back-btn.mat-mdc-button-disabled,
 :host ::ng-deep .back-btn[disabled] {
   background-color: rgba(63, 81, 181, 0.55) !important;
