@@ -1,0 +1,104 @@
+.form-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: transparent;
+  padding: 0;
+}
+
+.form-header h2 {
+  margin: 0 0 0.25rem 0;
+  color: rgba(0,0,0,0.85);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.modern-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.file-upload-zone {
+  border: 1px dashed rgba(0,0,0,0.18);
+  border-radius: 4px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  background: transparent;
+}
+
+.file-upload-zone.file-active {
+  border-color: rgba(142, 36, 170, 0.55);
+  background: rgba(255,255,255,0.22);
+}
+
+.file-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+  color: rgba(0,0,0,0.65);
+}
+
+.hidden-input {
+  display: none;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem 0;
+  font-weight: 800;
+  font-size: 0.95rem;
+  border-radius: 4px;
+}
+
+:host ::ng-deep .submit-button.mat-mdc-unelevated-button {
+  background-color: rgba(63, 81, 181, 1) !important;
+  color: #fff !important;
+}
+
+:host ::ng-deep .submit-button.mat-mdc-unelevated-button:hover {
+  background-color: rgba(63, 81, 181, 0.9) !important;
+}
+
+:host ::ng-deep .submit-button.mat-mdc-button-disabled,
+:host ::ng-deep .submit-button[disabled] {
+  background-color: rgba(63, 81, 181, 0.55) !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  cursor: not-allowed;
+}
+
+:host ::ng-deep .submit-button.mat-mdc-button-disabled mat-icon {
+  color: #ffffff !important;
+}
+
+:host ::ng-deep .mat-mdc-input-element {
+  color: rgba(0,0,0,0.87) !important;
+}
+
+:host ::ng-deep .mdc-floating-label {
+  color: rgba(0,0,0,0.87) !important;
+}
+
+:host ::ng-deep .mdc-notched-outline__leading,
+:host ::ng-deep .mdc-notched-outline__notch,
+:host ::ng-deep .mdc-notched-outline__trailing {
+  border-color: rgba(0,0,0,0.25) !important;
+}
+
+:host ::ng-deep .mdc-text-field--focused .mdc-notched-outline__leading,
+:host ::ng-deep .mdc-text-field--focused .mdc-notched-outline__notch,
+:host ::ng-deep .mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: rgba(63, 81, 181, 0.7) !important;
+}
+
+mat-icon {
+  color: rgba(0,0,0,0.45);
+}

@@ -1,0 +1,167 @@
+.main-wrapper {
+  min-height: 100vh;
+  padding: 4rem 3.5rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.top-row {
+  margin-top: 3.5rem;
+  margin-bottom: 2.25rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 3.6rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.05;
+}
+
+.subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+.content-bubble {
+  position: relative;
+  width: 100%;
+  margin-top: 0.2rem;
+  min-height: 520px;
+  background: transparent;
+}
+
+.content-bubble::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background: #f7e7d8; /* Tu color crema/marrón claro */
+  border-radius: 18px;
+  z-index: -1;
+}
+
+.content-inner {
+  padding: 3rem 0;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.avatar-circle {
+  width: 80px;
+  height: 80px;
+  background: #3f51b5;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.id-text {
+  font-size: 0.85rem;
+  opacity: 0.5;
+  font-family: monospace;
+}
+
+.custom-divider {
+  margin: 2rem 0;
+  border-top-color: rgba(0,0,0,0.1) !important;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.1rem 1.25rem;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+}
+
+.info-card mat-icon {
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  color: rgba(0,0,0,0.35);
+}
+
+.info-card .icon-yes { color: rgba(46,125,50,0.8); }
+.info-card .icon-no  { color: rgba(198,40,40,0.8); }
+
+.data {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  opacity: 0.5;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: rgba(0,0,0,0.85);
+}
+
+.actions-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Botón estilo "submit-button" (igual que el form) */
+.back-btn {
+  width: 15%;
+  padding: 1rem 0;
+  font-weight: 800;
+  font-size: 0.95rem;
+  border-radius: 4px;
+}
+
+/* Estado normal */
+:host ::ng-deep .back-btn.mat-mdc-unelevated-button {
+  background-color: rgba(63, 81, 181, 1) !important;
+  color: #fff !important;
+}
+
+/* Hover */
+:host ::ng-deep .back-btn.mat-mdc-unelevated-button:hover {
+  background-color: rgba(63, 81, 181, 0.9) !important;
+}
+
+/* Si algún día lo deshabilitas */
+:host ::ng-deep .back-btn.mat-mdc-button-disabled,
+:host ::ng-deep .back-btn[disabled] {
+  background-color: rgba(63, 81, 181, 0.55) !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  cursor: not-allowed;
+}
+
+:host ::ng-deep .back-btn.mat-mdc-button-disabled mat-icon {
+  color: #ffffff !important;
+}

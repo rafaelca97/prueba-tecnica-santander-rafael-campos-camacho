@@ -1,0 +1,148 @@
+.main-wrapper {
+  min-height: 100vh;
+  padding: 4rem 3.5rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 3.5rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 3.6rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.05;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+.badge {
+  width: fit-content;
+  margin-top: 0.4rem;
+  background: #3f51b5;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.tabs-shell {
+  position: relative;
+  width: 30%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  padding-bottom: 12px;
+}
+
+.tab-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0.75rem 0.2rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  color: rgba(0,0,0,0.75);
+}
+
+.tab-btn.active {
+  color: rgba(0,0,0,0.9);
+}
+
+.tab-underline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 50%;
+  background: #3f51b5e6;
+;
+  border-radius: 999px;
+  transition: transform 220ms ease;
+}
+
+.content-bubble {
+  position: relative;
+  width: 100%;
+  margin-top: 0.2rem;
+  padding: 0rem 0;
+  min-height: 520px;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.content-bubble::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background: #f7e7d8;
+  border-radius: 18px;
+  z-index: -1;
+}
+
+.content-inner {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+    color: rgba(0,0,0,0.85);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.content-inner h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: rgba(0,0,0,0.85);
+}
+
+::ng-deep .content-inner .mat-mdc-form-field .mdc-floating-label {
+  color: rgba(0,0,0,0.65) !important;
+}
+::ng-deep .content-inner .mat-mdc-form-field .mdc-text-field--outlined {
+  background: transparent !important;
+}
+
+@media (max-width: 1100px) {
+  .top-row {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .tabs-shell {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .content-bubble {
+    width: 100%;
+    margin-left: 0;
+  }
+}

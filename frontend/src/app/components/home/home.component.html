@@ -1,0 +1,45 @@
+<div class="main-wrapper">
+  <div class="top-row">
+    <header class="hero-section">
+      <h1 class="title">{{ texts.TITLE }}</h1>
+      <p class="subtitle">{{ texts.SUBTITLE }}</p>
+      <span class="badge">{{ texts.APP_BADGE }}</span>
+    </header>
+
+    <div class="tabs-shell" role="tablist" aria-label="tabs">
+      <button
+        type="button"
+        class="tab-btn"
+        [class.active]="activeTab === 0"
+        (click)="setTab(0)"
+      >
+        {{ texts.TABS.LIST }}
+      </button>
+
+      <button
+        type="button"
+        class="tab-btn"
+        [class.active]="activeTab === 1"
+        (click)="setTab(1)"
+      >
+        {{ texts.TABS.ADD }}
+      </button>
+
+      <span class="tab-underline" [style.transform]="underlineTransform"></span>
+    </div>
+  </div>
+
+  <main class="content-bubble mat-elevation-z2">
+    <div class="content-inner">
+      <div [ngSwitch]="tabGroupIndex">
+        <div *ngSwitchCase="0" class="fade-in">
+          <app-candidate-list></app-candidate-list>
+        </div>
+
+        <div *ngSwitchCase="1" class="fade-in">
+          <app-candidate-form (uploadSuccess)="tabGroupIndex = 0"></app-candidate-form>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

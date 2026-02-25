@@ -1,0 +1,36 @@
+<div class="form-card-content">
+  <header class="form-header">
+    <h2>{{ formTexts.TITLE }}</h2>
+  </header>
+
+  <form [formGroup]="candidateForm" (ngSubmit)="onSubmit()" class="modern-form">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>{{ formTexts.NAME_LABEL }}</mat-label>
+      <input matInput formControlName="name" autocomplete="off">
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>{{ formTexts.SURNAME_LABEL }}</mat-label>
+      <input matInput formControlName="surname" autocomplete="off">
+      <mat-icon matSuffix>badge</mat-icon>
+    </mat-form-field>
+
+    <div class="file-upload-zone" [class.file-active]="selectedFile">
+      <label class="file-label">
+        <mat-icon>description</mat-icon>
+        <span>{{ selectedFile ? selectedFile.name : formTexts.FILE_LABEL }}</span>
+        <input type="file" (change)="onFileSelected($event)" accept=".xlsx, .xls" class="hidden-input">
+      </label>
+    </div>
+
+    <div class="actions">
+      <button mat-flat-button color="primary" type="submit"
+              [disabled]="candidateForm.invalid || !selectedFile"
+              class="submit-button">
+        <mat-icon>cloud_upload</mat-icon>
+        {{ formTexts.BUTTON_SUBMIT }}
+      </button>
+    </div>
+  </form>
+</div>

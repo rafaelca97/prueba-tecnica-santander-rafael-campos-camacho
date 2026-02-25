@@ -1,0 +1,61 @@
+.table-container {
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none !important;
+  background: transparent;
+}
+
+table {
+  width: 100%;
+  background: transparent;
+  border-collapse: collapse;
+    font-size: 0.95rem;
+  color: rgba(0,0,0,0.85);
+}
+
+th.mat-mdc-header-cell {
+  background: transparent !important;
+  color: rgba(0,0,0,0.75);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+}
+
+td.mat-mdc-cell {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  color: rgba(0,0,0,0.85);
+}
+
+tr.mat-mdc-row:hover td.mat-mdc-cell {
+  background: rgba(255,255,255,0.25);
+}
+
+.candidate-link {
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: 600;
+}
+.candidate-link:hover {
+  text-decoration: underline;
+}
+
+.status-yes,
+.status-no {
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.status-yes {
+  color: #1b5e20;
+  background: rgba(46, 125, 50, 0.12);
+}
+
+.status-no {
+  color: #b71c1c;
+  background: rgba(198, 40, 40, 0.12);
+}

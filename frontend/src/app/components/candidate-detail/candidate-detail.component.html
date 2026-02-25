@@ -1,0 +1,63 @@
+<div class="main-wrapper">
+  <div class="top-row">
+    <header class="hero-section">
+      <h1 class="title">{{ texts.TITLE }}</h1>
+      <p class="subtitle" *ngIf="candidate">
+        Perfil completo de {{ candidate.name }} {{ candidate.surname }}
+      </p>
+    </header>
+  </div>
+
+  <main class="content-bubble mat-elevation-z2">
+    <div class="content-inner" *ngIf="candidate">
+
+      <div class="detail-header">
+        <div class="avatar-circle">
+          {{ candidate.name[0] }}{{ candidate.surname[0] }}
+        </div>
+        <div class="name-box">
+          <h2>{{ candidate.name }} {{ candidate.surname }}</h2>
+          <span class="id-text">{{ texts.ID_LABEL }}: {{ candidate._id }}</span>
+        </div>
+      </div>
+
+      <mat-divider class="custom-divider"></mat-divider>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <mat-icon>trending_up</mat-icon>
+          <div class="data">
+            <span class="label">Seniority</span>
+            <span class="value">{{ candidate.seniority | titlecase }}</span>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <mat-icon>schedule</mat-icon>
+          <div class="data">
+            <span class="label">Experience</span>
+            <span class="value">{{ candidate.years }} {{ texts.EXPERIENCE_UNIT }}</span>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <mat-icon [class.icon-yes]="candidate.availability" [class.icon-no]="!candidate.availability">
+            {{ candidate.availability ? 'check_circle' : 'cancel' }}
+          </mat-icon>
+          <div class="data">
+            <span class="label">Availability</span>
+            <span class="value">{{ candidate.availability ? 'Available' : 'Not Available' }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions-row">
+        <button mat-flat-button color="primary" routerLink="/" class="back-btn">
+          <mat-icon>arrow_back</mat-icon>
+          {{ texts.BACK_BUTTON }}
+        </button>
+      </div>
+
+    </div>
+  </main>
+</div>

@@ -1,0 +1,40 @@
+<div class="table-container">
+  <table mat-table [dataSource]="(candidates$ | async) ?? []">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>{{ labels.name }}</th>
+      <td mat-cell *matCellDef="let element">
+        <a [routerLink]="['/candidate', element._id]" class="candidate-link">
+          {{ element.name }}
+        </a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="surname">
+      <th mat-header-cell *matHeaderCellDef>{{ labels.surname }}</th>
+      <td mat-cell *matCellDef="let element">{{ element.surname }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="seniority">
+      <th mat-header-cell *matHeaderCellDef>{{ labels.seniority }}</th>
+      <td mat-cell *matCellDef="let element">{{ element.seniority | titlecase }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="years">
+      <th mat-header-cell *matHeaderCellDef>{{ labels.years }}</th>
+      <td mat-cell *matCellDef="let element">{{ element.years }} years</td>
+    </ng-container>
+
+    <ng-container matColumnDef="availability">
+      <th mat-header-cell *matHeaderCellDef>{{ labels.availability }}</th>
+      <td mat-cell *matCellDef="let element">
+        <span [ngClass]="element.availability ? 'status-yes' : 'status-no'">
+          {{ element.availability ? 'Yes' : 'No' }}
+        </span>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
