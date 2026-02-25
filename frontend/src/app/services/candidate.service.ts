@@ -7,7 +7,7 @@ import { Candidate } from '../models/candidate.model';
   providedIn: 'root'
 })
 export class CandidateService {
-  private apiUrl = 'http://localhost:3000/candidates';
+  private apiUrl = 'https://prueba-tecnica-santander-rafael-campos-camacho-production.up.railway.app/candidates';
 
   private candidatesSubject = new BehaviorSubject<Candidate[]>([]);
 
